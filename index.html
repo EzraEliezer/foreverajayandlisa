@@ -4,37 +4,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Invitation</title>
+  <title>Lisa Weds Ajay</title>
+  <link rel="icon" href="/public/images/Screenshot 2023-10-01 at 22.23.58.png" type="image/png">
+  <style>
+    .overlay-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #ffffff00;
+      /* Semi-transparent black background */
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      /* Make sure it's on top of other content */
+      backdrop-filter: blur(30px);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      /* Semi-transparent black background */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: left;
+      z-index: 1000;
+      /* Make sure it's on top of other content */
+      border-radius: 32px;
+      width: 600px;
+      max-width: 100%;
+      max-height: calc(100vh - 48px);
+      box-shadow: rgba(44, 41, 37, 0.25) 0px 50px 100px, rgba(0, 0, 0, 0.3) 0px 30px 60px;
+      padding: 20px;
+    }
+
+    @media all and (max-width: 768px) {
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        background-color: #ffffff;
+        border-radius: 32px;
+        width: 100%;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+      }
+    }
+
+    .overlay p {
+      color: #0f0f0f;
+    }
+
+    .overlay h3 {
+      color: #0f0f0f;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .bible-verse {
+      margin: auto;
+      padding: 20px;
+      font-size: 24px;
+      color: #0f0f0f;
+      /* margin-bottom: 10px; */
+    }
+
+    .verse-info {
+      font-size: 18px;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+
+    .continue-button {
+      /* background-color: #6a5acd; */
+      border: 1px solid #6a5acd;
+      color: #000000;
+      padding: 10px 20px 10px 16px;
+      text-decoration: none;
+      border-radius: 32px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      width: 100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .continue-button:hover {
+      background-color: #6a5acd;
+      color: #ffffff;
+    }
+
+    /* Add this CSS for the fade-out animation */
+    .fade-out {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      /* Adjust the duration and easing as needed */
+    }
+  </style>
 
 </head>
 
 <body>
-  <header>
-    <h1>#AjLj</h1>
-  </header>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="bible-verse">
+        <h3>We Welcome You</h3>
+        <p>On behalf of our families, we thank you for being a special part of our lives and would love to have you
+          celebrate this milestone with us.</p>
+      </div>
+
+      <div class="continue-button">Continue</div>
+    </div>
+  </div>
+
+  <div class="menu-icon">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+  </div>
+
+  <!-- Side Panel -->
+  <div class="side-panel">
+    <ul>
+      <li><a href="#invitation">Invitation</a></li>
+      <li><a href="#countdown">Countdown</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+  </div>
+
+
+  <img src="./public/images/invitation.png" class="logo_img" alt="">
   <section class="intro">
 
-    <div class="intro-content">
-      <h1>Ajay and Lisa</h1>
-      <p>We invite you to join in our happiness as we unite in marriage!</p>
+    <div class="intro-content"><br><br>
+      <h1>Lisa Weds Ajay</h1><br><br>
+      <h3>16th November, 2023</h3>
     </div>
 
   </section>
 
-  <section class="details">
+  <section class="details" id="invitation">
     <div class="invitation-content">
-      <h2>Nov 1th, Thursday, 2022</h2>
+      <h2>Thursday, Nov 16th, 2022</h2>
       <!-- <div class="line"></div> -->
       <p><strong>The Wedding!</strong></p>
       <p>As we prepare to exchange vows and say 'I do,' we request the honor of your presence to share in the joy of
         this special day</p>
-      <p><strong>at 3:30 PM</strong></p>
+
+      <p><strong>at 4:00 PM</strong></p>
 
 
       <p><strong>Reception followed by Dinner!</strong></p>
       <p>After we say I do, let's continue the celebration with a reception and dinner to mark the beginning of our
         beautiful journey together</p>
-      <p><strong>at 6:30 PM</strong></p>
+      <p><strong>at 7:00 PM</strong></p>
 
       <div class="location">
         <p>See you at</p>
@@ -43,29 +171,28 @@
     </div>
   </section>
 
-  <!-- <section>
+  <section class="countdownContainer" id="countdown">
+      <div class="block">
 
-  </section> -->
-  <section class="countdownContainer">
-    <div class="block">
-      <h1 id="headline">Our Happily Ever After Starts</h1>
-      <div id="countdown">
-        <ul>
-          <li><span id="days"></span>days</li>
-          <li><span id="hours"></span>Hours</li>
-          <li><span id="minutes"></span>Minutes</li>
-          <!-- <li><span id="seconds"></span>Seconds</li> -->
-        </ul>
+        <h3>Celebrate with us!</h3>
+        <p>We're so excited to see you at our wedding! We can't think of a better way to start our new journey than with all of you!</p>
+        <div id="countdown">
+          <ul>
+            <li><span class="count-value" id="days"></span><span class="count-unit">Days</span></li>
+            <li><span class="count-value" id="hours"></span><span class="count-unit">Hrs</span></li>
+            <li><span class="count-value" id="minutes"></span><span class="count-unit">Mins</span></li>
+            <li><span class="count-value" id="seconds"></span><span class="count-unit">Secs</span></li>
+          </ul>
+        </div>
+        <div id="content" class="emoji">
+          <span>🥳</span>
+          <span>🎉</span>
+          <span>🎂</span>
+        </div>
       </div>
-      <div id="content" class="emoji">
-        <span>🥳</span>
-        <span>🎉</span>
-        <span>🎂</span>
-      </div>
-    </div>
   </section>
 
-  <footer>
+  <footer id="location">
     <div class="map-container">
       <a href="https://maps.app.goo.gl/1GaSXYji3WiJs4pM8">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
@@ -79,7 +206,49 @@
   </footer>
 
   <script src="/main.js" type="module"></script>
+  <script>
+    // Get a reference to the "Continue" button
+    const continueButton = document.querySelector('.continue-button');
 
+    // Get a reference to the overlay
+    const overlay_bk = document.querySelector('.overlay-container');
+    const overlay = document.querySelector('.overlay');
+
+    // Add a click event listener to the button
+    continueButton.addEventListener('click', function () {
+      // Add a CSS class to trigger the fade-out animation
+      overlay_bk.classList.add('fade-out');
+      overlay.classList.add('fade-out');
+
+      // After the animation completes (assumed 1 second), set display to "none"
+      setTimeout(function () {
+        overlay_bk.style.display = 'none';
+        overlay.style.display = 'none';
+      }, 1000); // 1000 milliseconds (1 second) - adjust as needed
+    });
+
+    // script.js
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidePanel = document.querySelector('.side-panel');
+    const content = document.querySelector('.content');
+
+    menuIcon.addEventListener('click', () => {
+      sidePanel.classList.toggle('show');
+      content.classList.toggle('shift');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+  </script>
 
 </body>
 

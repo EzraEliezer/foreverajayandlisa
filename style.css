@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Inter+Tight:wght@200&display=swap');
 :root {
   --background-color: #f1effe;
   --text-color: #333;
   --white-color: #fff;
-  --heading-text-color: #600698;
+  --black-color: #290349;
+  --heading-text-color: #875faa;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +22,7 @@ body {
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
-  font-family: 'Dancing Script', cursive;
-
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+  font-family: 'Inter Tight', sans-serif;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -33,23 +35,13 @@ body {
   color: var(--white-color);
 }
 
-/* Style the header, countdown, and photo-description sections as needed */
-header {
-  background-color: var(--background-color);
-  color: var(--white-color);
-  text-align: center;
-  height: 80px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.logo_img{
+  width: 180px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-header h1{
-  margin: auto;
-  font-size: 50px;
-  font-family: 'Dancing Script', cursive;
-  color: var(--heading-text-color);
-}
-
 .intro{
   height: 100vh;
   width: 100%;
@@ -65,14 +57,22 @@ header h1{
   flex-direction: column;
   text-align: center;
   width: 80%;
+  border-radius: 10px;
+  /* background-color: var(--background-color); */
+  /* padding: 10px; */
 }
 .intro-content h1{
   font-size: 60px;
+  font-family: 'Tangerine', cursive;
+  color: var(--black-color);
 }
-.intro-content p{
+
+.intro h3{
   font-size: 40px;
-  color: var(--white-color);
+  color: var(--black-color);
+  font-family: 'Tangerine', cursive;
 }
+
 .countdownContainer {
   color: var(--text-color);
   margin: 0 auto;
@@ -96,24 +96,40 @@ header h1{
   margin: auto;
   border-radius: 5px;
 }
-
-#headline {
+.block p {
+  margin: 30px 0;
+}
+.block h3 {
+  margin-top: 20px;
   font-weight: normal;
-  letter-spacing: 0.125rem;
-  text-transform: uppercase;
+  font-size: 40px;
+  color: var(--black-color);
+  font-family: 'Tangerine', cursive;
 }
-
-li {
+#countdown{
+  margin-bottom: 20px;
+}
+#countdown ul{
+margin: 10px 0 10px 0;
+}
+#countdown li {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 1em;
   list-style-type: none;
-  padding: 1em;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
   text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
 }
 
-li span {
+.count-value {
   display: block;
-  font-size: 4.5rem;
+  font-size: 20px;
+}
+.count-unit{
+  font-size: 10px;
 }
 
 .emoji {
@@ -151,20 +167,20 @@ li span {
   width: 80%;
   margin: auto;
   padding: 30px;
-  background-color: #fffef0;
+  background-color: #fffff9;
   border-radius: 5px;
-  font-family: 'Dancing Script', cursive;
-  color: var(--heading-text-color);
+  font-family: 'Tangerine', cursive;
+  color: var(--black-color);
 }
 
 /* Apply styles to the headings with lines underneath */
-h2 {
+.invitation-content h2 {
   position: relative;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-h2::before {
+.invitation-content h2::before {
   content: "";
   position: absolute;
   width: 80%;
@@ -215,16 +231,83 @@ footer {
 .map-container a{
   text-decoration: none;  
   padding: 10px 20px 10px 20px;
-  background-color: #60009cbb;
+  background-color: #000000;
   backdrop-filter: blur(10px);
   color: var(--white-color);
   margin: 20px auto;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.map-container a:hover{
+  background-color: #875faa;
+  color: var(--black-color);
 }
 .map-container a p{
   color: var(--white-color);
   margin: auto;
 }
 
+
+/* ################# Hamburger Menu ################### */
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 2;
+  background-color: #9373bf4d;
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.bar {
+  width: 30px;
+  height: 2px;
+  background-color: #000000;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -50%; /* Hide the side panel initially */
+  width: 50%;
+  height: 100%;
+  background-color: #ffffff62;
+  overflow-y: auto;
+  transition: 0.4s;
+  z-index: 1;
+  display: flex;
+  justify-content: right;
+  backdrop-filter: blur(20px);
+}
+.side-panel.show {
+  right: 0; /* Show the side panel by setting left to 0 */
+}
+.side-panel ul {
+  margin: auto 10px;
+  list-style: none;
+  padding: 10px;
+  text-align: right;
+}
+
+.side-panel ul li {
+  margin: 30px 0;
+}
+
+.side-panel ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 18px;
+  transition: opacity 0.2s ease;
+}
+
+.side-panel ul li a:hover {
+  color: var(--heading-text-color);
+}
