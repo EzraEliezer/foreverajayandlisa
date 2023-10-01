@@ -137,16 +137,6 @@ margin: 10px 0 10px 0;
   font-size: 10px;
 }
 
-.emoji {
-  display: none;
-  padding: 1rem;
-}
-
-.emoji span {
-  font-size: 4rem;
-  padding: 0 0.5rem;
-}
-
 @media all and (max-width: 768px) {
   h1 {
     font-size: calc(1.5rem * var(--smaller));

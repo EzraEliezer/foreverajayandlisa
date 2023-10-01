@@ -1,5 +1,9 @@
 import './style.css'
-
+const countUnit = document.querySelectorAll('.count-unit');
+const daysElement =document.getElementById("days");
+const hoursElement =document.getElementById("hours");
+const minutesElement =document.getElementById("minutes");
+const secondsElement =document.getElementById("seconds");
 (function () {
   const second = 1000,
         minute = second * 60,
@@ -28,17 +32,21 @@ import './style.css'
         const now = new Date().getTime(),
               distance = countDown - now;
 
-        document.getElementById("days").innerText = Math.floor(distance / (day));
-        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour));
-        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
-        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        daysElement.innerText = Math.floor(distance / (day));
+        hoursElement.innerText = Math.floor((distance % (day)) / (hour));
+        minutesElement.innerText = Math.floor((distance % (hour)) / (minute));
+        secondsElement.innerText = Math.floor((distance % (minute)) / second);
 
         //do something later when date is reached
         if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
+        daysElement.innerText = '✨';
+        hoursElement.innerText = '💍';
+        minutesElement.innerText = '🥳';
+        secondsElement.innerText = '🎉';
+        countUnit.forEach((ele)=>{
+          ele.style.display='none';
+        })
+
         }
         //seconds
       }, 0)
