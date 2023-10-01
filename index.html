@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lisa Weds Ajay</title>
-  <link rel="icon" href="/public/images/Screenshot 2023-10-01 at 22.23.58.png" type="image/png">
+  <link rel="icon" href="/public/images/invitation.jpg" type="image/png">
   <style>
     .overlay-container {
       position: fixed;
@@ -29,11 +29,11 @@
       /* Semi-transparent black background */
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       text-align: left;
       z-index: 1000;
       /* Make sure it's on top of other content */
-      border-radius: 32px;
+      border-radius: 10px;
       width: 600px;
       max-width: 100%;
       max-height: calc(100vh - 48px);
@@ -57,46 +57,48 @@
     }
 
     .overlay p {
-      color: #0f0f0f;
+      color: #290349;
+      font-size: 16px;
     }
 
     .overlay h3 {
-      color: #0f0f0f;
+      color: #290349;
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
 
     .bible-verse {
-      margin: auto;
-      padding: 20px;
+      margin: 0 auto;
       font-size: 24px;
-      color: #0f0f0f;
+      color: #290349;
       /* margin-bottom: 10px; */
     }
 
     .verse-info {
       font-size: 18px;
-      color: #000000;
+      color: #290349;
       margin-bottom: 20px;
     }
 
     .continue-button {
-      /* background-color: #6a5acd; */
-      border: 1px solid #6a5acd;
-      color: #000000;
+      background-color: #290349;
+      border: 1px solid #ffffff;
+      color: #ffffff;
       padding: 10px 20px 10px 16px;
       text-decoration: none;
-      border-radius: 32px;
-      transition: background-color 0.3s;
+      border-radius: 10px;
+      transition: all 0.3s;
       cursor: pointer;
       width: 100px;
-      margin: auto;
+      margin: 20px auto 0px auto;
       text-align: center;
+      font-size: 16px;
     }
 
     .continue-button:hover {
-      background-color: #6a5acd;
-      color: #ffffff;
+      border: 1px solid #290349;
+      background-color: #ffffff;
+      color: #290349;
     }
 
     /* Add this CSS for the fade-out animation */
@@ -114,7 +116,7 @@
     <div class="overlay">
       <div class="bible-verse">
         <h3>We Welcome You</h3>
-        <p>On behalf of our families, we thank you for being a special part of our lives and would love to have you
+        <p>On behalf of our families, we thank you for being a special part of our lives. We would love to have you
           celebrate this milestone with us.</p>
       </div>
 
@@ -131,6 +133,7 @@
   <!-- Side Panel -->
   <div class="side-panel">
     <ul>
+      <li><a href="#home">Go to Top</a></li>
       <li><a href="#invitation">Invitation</a></li>
       <li><a href="#countdown">Countdown</a></li>
       <li><a href="#location">Location</a></li>
@@ -139,10 +142,10 @@
 
 
   <img src="./public/images/invitation.png" class="logo_img" alt="">
-  <section class="intro">
+  <section class="intro" id="home">
 
-    <div class="intro-content"><br><br>
-      <h1>Lisa Weds Ajay</h1><br><br>
+    <div class="intro-content">
+      <h1>Lisa Weds Ajay</h1>
       <h3>16th November, 2023</h3>
     </div>
 
@@ -150,46 +153,49 @@
 
   <section class="details" id="invitation">
     <div class="invitation-content">
-      <h2>Thursday, Nov 16th, 2022</h2>
-      <!-- <div class="line"></div> -->
-      <p><strong>The Wedding!</strong></p>
-      <p>As we prepare to exchange vows and say 'I do,' we request the honor of your presence to share in the joy of
-        this special day</p>
-
-      <p><strong>at 4:00 PM</strong></p>
-
-
-      <p><strong>Reception followed by Dinner!</strong></p>
-      <p>After we say I do, let's continue the celebration with a reception and dinner to mark the beginning of our
-        beautiful journey together</p>
-      <p><strong>at 7:00 PM</strong></p>
-
+      <h2>Thursday, Nov 16th, 2023</h2>
+      <div class="row">
+        <p><strong>Wedding</strong></p>
+        <p>at 4:00 PM</p>
+      </div>
+      <p class="info">
+        We are excited to invite you to our special day as we exchange vows and celebrate the beginning of our journey
+        together. Join us for a beautiful wedding ceremony filled with love, joy, and cherished moments.
+      </p>
+      <div class="row">
+        <p><strong>Reception</strong></p>
+        <p>at 7:00 PM</p>
+      </div>
+      <p class="info">
+        After the ceremony, please stay with us for a delightful reception and dinner. Let's continue the celebration,
+        share laughter, and create memories that will last a lifetime.
+      </p>
       <div class="location">
-        <p>See you at</p>
-        <p>Palace Sheesh Mahal, Gate 7, Palace Grounds,</p>
+        <p>See you at:</p>
+        <p><a href="#location">Palace Sheesh Mahal, Gate 7, Palace Grounds, Bengaluru</a></p>
       </div>
     </div>
   </section>
 
   <section class="countdownContainer" id="countdown">
-      <div class="block">
+    <div class="block">
 
-        <h3>Celebrate with us!</h3>
-        <p>We're so excited to see you at our wedding! We can't think of a better way to start our new journey than with all of you!</p>
-        <div id="countdown">
-          <ul>
-            <li><span class="count-value" id="days"></span><span class="count-unit">Days</span></li>
-            <li><span class="count-value" id="hours"></span><span class="count-unit">Hrs</span></li>
-            <li><span class="count-value" id="minutes"></span><span class="count-unit">Mins</span></li>
-            <li><span class="count-value" id="seconds"></span><span class="count-unit">Secs</span></li>
-          </ul>
-        </div>
-        <div id="content" class="emoji">
-          <span>🥳</span>
-          <span>🎉</span>
-          <span>🎂</span>
-        </div>
+      <h3>Celebrate with us!</h3>
+      <p>We're so excited to see you at our wedding! We can't think of a better way to start our new journey than with your presence!</p>
+      <div id="countdown">
+        <ul>
+          <li><span class="count-value" id="days"></span><span class="count-unit">Days</span></li>
+          <li><span class="count-value" id="hours"></span><span class="count-unit">Hrs</span></li>
+          <li><span class="count-value" id="minutes"></span><span class="count-unit">Mins</span></li>
+          <li><span class="count-value" id="seconds"></span><span class="count-unit">Secs</span></li>
+        </ul>
       </div>
+      <div id="content" class="emoji">
+        <span>🥳</span>
+        <span>🎉</span>
+        <span>🎂</span>
+      </div>
+    </div>
   </section>
 
   <footer id="location">
@@ -207,24 +213,20 @@
 
   <script src="/main.js" type="module"></script>
   <script>
-    // Get a reference to the "Continue" button
     const continueButton = document.querySelector('.continue-button');
 
-    // Get a reference to the overlay
     const overlay_bk = document.querySelector('.overlay-container');
     const overlay = document.querySelector('.overlay');
 
-    // Add a click event listener to the button
     continueButton.addEventListener('click', function () {
-      // Add a CSS class to trigger the fade-out animation
+      console.log("hello")
       overlay_bk.classList.add('fade-out');
       overlay.classList.add('fade-out');
 
-      // After the animation completes (assumed 1 second), set display to "none"
       setTimeout(function () {
         overlay_bk.style.display = 'none';
         overlay.style.display = 'none';
-      }, 1000); // 1000 milliseconds (1 second) - adjust as needed
+      }, 1000); 
     });
 
     // script.js
@@ -234,20 +236,40 @@
 
     menuIcon.addEventListener('click', () => {
       sidePanel.classList.toggle('show');
-      content.classList.toggle('shift');
     });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    const links = document.querySelectorAll('.side-panel li');
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        sidePanel.classList.toggle('show');
+      });
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+  
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
         });
+      } // End if
     });
-});
-
-
+  });
   </script>
 
 </body>
